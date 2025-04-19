@@ -1,0 +1,257 @@
+Help me to complete the code by make sure that once I clicked any date in the calendar, it will show the list of available shifts in that day
+
+Also, help me to complete the code to make sure that the shift scheduling works
+
+This is the file below
+
+import React, { useState, useEffect } from "react";
+
+import { Link } from "react-router-dom";
+
+import {
+ FaHome,
+ FaCalendarAlt,
+ FaBell,
+ FaSyncAlt,
+ FaUser,
+ FaQuestionCircle,
+ FaBars,
+ FaTimes,
+ FaChevronDown,
+ FaChevronRight,
+
+} from "react-icons/fa";
+
+import Calendar from "react-calendar";
+
+import "react-calendar/dist/Calendar.css";
+
+import { shiftOverview, shiftTime } from "./ShiftOverview";
+
+import { getRandomShift } from "./shiftScheduler";
+
+
+
+const departments = [
+ "Emergency",
+ "Dermatology",
+ "Surgery",
+ "Obstetrics & Gynecology",
+ "Pediatrics",
+ "Physiotherapy",
+ "Ophthalmology",
+ "Radiology",
+ "Pathology",
+ "Pharmacy",
+ "Nursing",
+ "Public Health",
+
+];
+
+
+
+const Schedule: React.FC = () => {
+ const [isDeptOpen, setIsDeptOpen] = useState(false);
+ const [isMenuOpen, setIsMenuOpen] = useState(false);
+ const [selectedDate, setSelectedDate] = useState(new Date());
+ const [schedule, setSchedule] = useState\<any>([]);
+
+
+ const getDailySchedule = (department: string, day: number) => {
+   const deptData = shiftOverview[department];
+
+
+   if (!deptData || !deptData.days.includes(day)) return null;
+
+
+   const { doctors, nurses } = deptData;
+
+
+   const shuffleArray = \<T,>(arr: T[]): T[] =>
+     arr.sort(() => Math.random() - 0.5);
+
+
+   const assignedDoctors = shuffleArray(doctors).slice(0, 2);
+   const assignedNurses = shuffleArray(nurses).slice(0, 4);
+
+
+   return { doctors: assignedDoctors, nurses: assignedNurses };
+ };
+
+
+ return (
+   \<div className="flex flex-col lg\:flex-row items-start gap-2 lg\:p-4 bg-blue-50 min-h-screen">
+     {/\* Mobile Menu Toggle \*/}
+     \<button
+       className="lg\:hidden p-4 text-cyan-500"
+       onClick={() => setIsMenuOpen(!isMenuOpen)}
+     \>
+       {isMenuOpen ? \<FaTimes size={24} /> : \<FaBars size={24} />}
+     \</button>
+
+
+     {/\* Sidebar \*/}
+     \<div
+       className={\`sidebar lg\:block fixed lg\:static z-50 top-0 left-0 bg-cyan-500 p-4 h-full transition-transform duration-300 \${
+         isMenuOpen ? "translate-x-0" : "-translate-x-full"
+       } lg\:translate-x-0\`}
+     \>
+       \<ul className="grid gap-3">
+         \<div className="flex items-center gap-2 mb-4">
+           \<img src="lautech.png" alt="Lautech logo" className="size-8" />
+           \<h4 className="text-white font-medium">
+             LAUTECH TEACHING HOSPITAL
+           \</h4>
+         \</div>
+         \<Link to="/home" className="nav-link">
+           \<FaHome /> Dashboard
+         \</Link>
+         \<li
+           className="nav-link cursor-pointer flex justify-between"
+           onClick={() => setIsDeptOpen(!isDeptOpen)}
+         \>
+           \<span className="flex items-center gap-2">
+             \<FaCalendarAlt /> Schedule
+           \</span>
+           {isDeptOpen ? \<FaChevronDown /> : \<FaChevronRight />}
+         \</li>
+         {isDeptOpen && (
+           \<ul className="ml-6 grid gap-1">
+             {departments.map((dept) => (
+               \<Link
+                 key={dept}
+                 to={\`/schedule/\${dept.toLowerCase().replace(/\s+/g, "-")}\`}
+               \>
+                 \<li className="nav-link text-sm bg-white text-cyan-500 hover\:text-cyan-300 rounded-md px-3 py-1">
+                   {dept}
+                 \</li>
+               \</Link>
+             ))}
+           \</ul>
+         )}
+         \<Link to="/notifications" className="nav-link">
+           \<FaBell /> Notifications
+         \</Link>
+         \<Link to="/request" className="nav-link">
+           \<FaSyncAlt /> Request
+         \</Link>
+         \<Link to="/profile" className="nav-link">
+           \<FaUser /> Profile
+         \</Link>
+         \<Link to="/help" className="nav-link">
+           \<FaQuestionCircle /> Help/Support
+         \</Link>
+       \</ul>
+     \</div>
+
+
+     {/\* Main Content \*/}
+     \<div className="main w-full p-4 space-y-6">
+       \<h3 className="text-xl font-semibold mb-4 text-cyan-500">
+         Select a Date
+       \</h3>
+       \<Calendar
+         onChange={setSelectedDate}
+         value={selectedDate}
+         className="border p-4 rounded-md shadow-md"
+       />
+    
+     \</div>
+   \</div>
+ );
+
+};
+
+
+
+export default Schedule;
+
+
+
+This is the file containing the list of the staffs, days active and the shift times
+
+export const shiftOverview = {
+ Emergency: {
+   days: [1, 2, 3, 4, 5, 6, 7],
+   doctors: [
+     { name: "Dr. Amao Adetayo", role: "Doctor" },
+     { name: "Dr. Taiwo Kamalideen", role: "Doctor" },
+     { name: "Dr. Kehinde Khalid", role: "Doctor" },
+     { name: "Dr. Ayinla Quadri", role: "Doctor" },
+     { name: "Dr. Raji Azeez", role: "Doctor" },
+     { name: "Dr. Akande Akinwumi", role: "Emergency Doctor" },
+     { name: "Dr. Mubarak Ommar", role: "Doctor" },
+     { name: "Dr. Lateef Abdulsatar", role: "Senior Doctor" },
+     { name: "Dr. Kamal Usman", role: "Doctor" },
+     { name: "Dr. Okoro Chijioke", role: "Doctor" },
+   ],
+   nurses: [
+     { name: "Nurse Bisi Adeola", role: "Nurse" },
+     { name: "Nurse Halima Yusuf", role: "Nurse" },
+     { name: "Nurse Nkechi Okafor", role: "Nurse" },
+     { name: "Nurse Folashade Adebayo", role: "Nurse" },
+     { name: "Nurse Aminu Garba", role: "Nurse" },
+     { name: "Nurse Grace Chidiebere", role: "Nurse" },
+     { name: "Nurse Ibrahim Musa", role: "Nurse" },
+     { name: "Nurse Samuel Ekene", role: "Nurse" },
+     { name: "Nurse Maryam Danjuma", role: "Nurse" },
+     { name: "Nurse Segun Afolabi", role: "Nurse" },
+     { name: "Nurse Bello Abubakar", role: "Nurse" },
+     { name: "Nurse Zainab Lawal", role: "Nurse" },
+     { name: "Nurse Oluchi Nwankwo", role: "Nurse" },
+     { name: "Nurse Sikiru Olayinka", role: "Nurse" },
+     { name: "Nurse Joy Uchenna", role: "Nurse" },
+     { name: "Nurse Tunde Oladipo", role: "Nurse" },
+     { name: "Nurse Fatima Abdullahi", role: "Nurse" },
+     { name: "Nurse Adewale Michael", role: "Nurse" },
+     { name: "Nurse Chioma Nnamdi", role: "Nurse" },
+     { name: "Nurse Yakubu Suleiman", role: "Nurse" },
+   ],
+ },
+ Dermatology: {
+   days: [1, 3],
+   doctors: [
+     { name: "Dr. Adeyemi Solomon", role: "Surgeon" },
+     { name: "Dr. Emeka Eze", role: "Surgeon" },
+     { name: "Dr. Bashir Aliyu", role: "Surgeon" },
+     { name: "Dr. Ifeoma Nwosu", role: "Surgeon" },
+     { name: "Dr. Tunde Adewale", role: "Surgeon" },
+     { name: "Dr. Peter Okonkwo", role: "Surgeon" },
+     { name: "Dr. Adamu Musa", role: "Surgeon" },
+     { name: "Dr. Sarah Odu", role: "Surgeon" },
+     { name: "Dr. Usman Danladi", role: "Surgeon" },
+     { name: "Dr. Kunle Fatoki", role: "Surgeon" },
+   ],
+   nurses: [
+     { name: "Nurse Bolaji Olatunde", role: "Nurse" },
+     { name: "Nurse Obinna Nwoke", role: "Nurse" },
+     { name: "Nurse Hamza Bello", role: "Nurse" },
+     { name: "Nurse Aisha Mohammed", role: "Nurse" },
+     { name: "Nurse Ifedayo Adebisi", role: "Nurse" },
+     { name: "Nurse Grace Ogu", role: "Nurse" },
+     { name: "Nurse Jubril Alhassan", role: "Nurse" },
+     { name: "Nurse Florence Okpara", role: "Nurse" },
+     { name: "Nurse Emmanuel Eze", role: "Nurse" },
+     { name: "Nurse Idowu Akinpelu", role: "Nurse" },
+     { name: "Nurse Hassan Sule", role: "Nurse" },
+     { name: "Nurse Kemi Oyetunde", role: "Nurse" },
+     { name: "Nurse Nnamdi Okafor", role: "Nurse" },
+     { name: "Nurse Uchechi Obi", role: "Nurse" },
+     { name: "Nurse Ahmad Kabiru", role: "Nurse" },
+     { name: "Nurse Chinyere Maduka", role: "Nurse" },
+     { name: "Nurse Rahman Lawal", role: "Nurse" },
+     { name: "Nurse Daniel Olorunfemi", role: "Nurse" },
+     { name: "Nurse Bilikisu Yakubu", role: "Nurse" },
+     { name: "Nurse Olamide Olowookere", role: "Nurse" },
+   ],
+ },
+
+...other departments in the same manner
+
+
+export const shiftTime = [
+ { id: "07:00am - 03:00pm" },
+ { id: "03:00pm - 11:00pm" },
+ { id: "11:00pm - 07:00am" },
+
+];
