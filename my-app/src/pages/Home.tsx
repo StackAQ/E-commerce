@@ -34,22 +34,22 @@ const theFour: Four[] = [
 
 const product: Products[] = [
   {
-    image: "crazy-blue-jean.png",
+    image: "/crazy-blue-jean.png",
     name: "Classic Denim Jeans",
     price: "$49.99",
   },
   {
-    image: "green-hoodie.png",
+    image: "/green-hoodie.png",
     name: "Cozy Comfort Hoodie",
     price: "$39.99",
   },
   {
-    image: "red-shirt.png",
+    image: "/red-shirt.png",
     name: "Classic Polo Shirt",
     price: "$29.99",
   },
   {
-    image: "normal-blue-jean.png",
+    image: "/normal-blue-jean.png",
     name: "Chino Pants",
     price: "$44.99",
   },
@@ -57,32 +57,32 @@ const product: Products[] = [
 
 const about: Abouts[] = [
   {
-    img: "star-icon.png",
+    img: "/star-icon.png",
     head: "Passionate Craftsmanship",
     cap: "Every garment at Klothink is crafted with passion reflecting our commitment to quality and innovation.",
   },
   {
-    img: "fashion-icon.png",
+    img: "/fashion-icon.png",
     head: "Fashion Forward",
     cap: "We're trendsetters, curating styles that empower and inspire confidence.",
   },
   {
-    img: "loud-icon.png",
+    img: "/loud-icon.png",
     head: "Customer-Centric Approach",
     cap: "At Klothink, our customers are at the heart of everything we do",
   },
   {
-    img: "bulb-icon.png",
+    img: "/bulb-icon.png",
     head: "Global Inspiration",
     cap: "Influenced by global trends, we bring you a diverse and dynamic collection",
   },
   {
-    img: "shine-icon.png",
+    img: "/shine-icon.png",
     head: "Empowering Your Style",
     cap: "Beyond clothing, Klothink is a lifestyle. Join us on a journey of self-expression.",
   },
   {
-    img: "sun-icon.png",
+    img: "/sun-icon.png",
     head: "Sustainable Practices",
     cap: "Klothink is committed to sustainability, integrating eco-friendly practices into our production process.",
   },
@@ -90,17 +90,17 @@ const about: Abouts[] = [
 
 const testimonials: Abouts[] = [
   {
-    img: "testimonial-red.png",
+    img: "/testimonial-red.png",
     head: "Sarah Thomson",
     cap: "Klothink exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!",
   },
   {
-    img: "testimonial-white.png",
+    img: "/testimonial-white.png",
     head: "Rajesh Patel",
     cap: "Absolutely love the style and warmth of the jacket. A perfect blend of fashion and functionality",
   },
   {
-    img: "testimonial-yellow.png",
+    img: "/testimonial-yellow.png",
     head: "Emily Walker",
     cap: "Adorable and comfortable! My daughter loves her new outfit. Thank you, Klothink, for dressing our little fashionista.",
   },
@@ -192,7 +192,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="size-10">
-          <img src="logo.png" alt="Klothink Logo" className="h-10 w-auto" />
+          <img src="/logo.png" alt="Klothink Logo" className="h-10 w-auto" />
         </div>
 
         <div className="flex items-center gap-4">
@@ -204,7 +204,6 @@ const Home: React.FC = () => {
               <FaShoppingCart />
             </button>
           </Link>
-          <a href="#" aria-label="View Cart"></a>
 
           <Link to="/contactsupport">
             <button
@@ -227,15 +226,19 @@ const Home: React.FC = () => {
         {isOpen && (
           <div className="bg-gray-200 rounded-md p-4 absolute top-0 left-0 w-full h-40 flex justify-between z-50">
             <div className="grid gap-2">
-              <a href="" className="hover:text-gray-700 transition">
-                Home
-              </a>
-              <a href="#" className="hover:text-gray-700 transition">
-                Products
-              </a>
-              <a href="#" className="hover:text-gray-700 transition">
-                Contact Support
-              </a>
+              <Link to="/">
+                <a className="hover:text-gray-700 transition">Home</a>
+              </Link>
+
+              <Link to="/products">
+                <a className="hover:text-gray-700 transition">Products</a>
+              </Link>
+
+              <Link to="/contactsupport">
+                <a className="hover:text-gray-700 transition">
+                  Contact Support
+                </a>
+              </Link>
             </div>
             <button
               onClick={toggleMenu}

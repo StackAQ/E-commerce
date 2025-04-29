@@ -23,10 +23,10 @@ const ProductDetails: React.FC = () => {
   return (
     <div className="font-manrope">
       {/* navbar */}
-      <nav className="p-2 lg:px-10 flex justify-between items-center border-b border-gray-400 relative">
+      <nav className="p-2 lg:px-10 flex justify-between items-center border-b border-gray-400 relative top-0">
         <div className="lg:flex items-center gap-4 hidden">
           <Link to="/">
-            <button className="nav-btn bg-gray-100 hover:bg-transparent">
+            <button className="nav-btn hover:bg-gray-100 hover:bg-transparent">
               Home
             </button>
           </Link>
@@ -50,13 +50,14 @@ const ProductDetails: React.FC = () => {
               <FaShoppingCart />
             </button>
           </Link>
-          <a href="#" aria-label="View Cart"></a>
 
           <Link to="/contactsupport">
             <button
               className="nav-btn hover:bg-gray-100 text-gray-600 hidden lg:block"
               aria-label="Contact Support"
-            >Contact Support</button>
+            >
+              Contact Support
+            </button>
           </Link>
 
           <button
@@ -71,15 +72,19 @@ const ProductDetails: React.FC = () => {
         {isOpen && (
           <div className="bg-gray-200 rounded-md p-4 absolute top-0 left-0 w-full h-40 flex justify-between z-50">
             <div className="grid gap-2">
-              <a href="" className="hover:text-gray-700 transition">
-                Home
-              </a>
-              <a href="#" className="hover:text-gray-700 transition">
-                Products
-              </a>
-              <a href="#" className="hover:text-gray-700 transition">
-                Contact Support
-              </a>
+              <Link to="/">
+                <a className="hover:text-gray-700 transition">Home</a>
+              </Link>
+
+              <Link to="/products">
+                <a className="hover:text-gray-700 transition">Products</a>
+              </Link>
+
+              <Link to="/contactsupport">
+                <a className="hover:text-gray-700 transition">
+                  Contact Support
+                </a>
+              </Link>
             </div>
             <button
               onClick={toggleMenu}
@@ -91,6 +96,39 @@ const ProductDetails: React.FC = () => {
           </div>
         )}
       </nav>
+
+      <div className="flex flex-col lg:flex-row item-start gap-8 layout">
+        <img src="/dress-details-normal.png" className="hidden lg:block" alt="" />
+        <img src="/dress-details-mobile.png" className="block lg:hidden" alt="" />
+        <div className="grid gap-4 w-full">
+          <div className="flex items-start flex-col lg:flex-row justify-between gap-4 w-full">
+            <div className="grid gap-2">
+              <div className="flex items-center gap-2">
+                <span className="description">Men's Casual Outerwear</span>
+                <span className="text-sm px-2 py-1 bg-yellow-400 rounded-3xl">
+                  12 Left!
+                </span>
+              </div>
+              <span className="subhead">Urban Explorer Denim Jacket</span>
+              <span className="font-semibold text-[#262626] text-2xl">
+                $69.99
+              </span>
+            </div>
+
+            <div className="flex items-center lg:gap-4 justify-around w-full lg:w-fit">
+              <button className="flex items-center gap-2 px-4 py-2 rounded-3xl hover:text-black text-white hover:bg-white hover:border hover:border-[#F1F1F3] bg-black">
+                <FaShoppingBag /> Buy Now
+              </button>
+              <button className="flex items-center gap-2 px-4 py-2 rounded-3xl text-black hover:text-white hover:bg-black border border-[#F1F1F3]">
+                <FaShoppingBag /> Buy Now
+              </button>
+            </div>
+          </div>
+          <div className="border border-[#F1F1F3] p-6 rounded-md">
+
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

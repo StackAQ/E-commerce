@@ -23,7 +23,7 @@ const ContactSupport: React.FC = () => {
   return (
     <div className="font-manrope">
       {/* navbar */}
-      <nav className="p-2 lg:px-10 flex justify-between items-center border-b border-gray-400 relative">
+      <nav className="p-2 lg:px-10 flex justify-between items-center border-b border-gray-400 relative top-0 left-0">
         <div className="lg:flex items-center gap-4 hidden">
           <Link to="/">
             <button className="nav-btn bg-gray-100 hover:bg-transparent">
@@ -50,7 +50,6 @@ const ContactSupport: React.FC = () => {
               <FaShoppingCart />
             </button>
           </Link>
-          <a href="#" aria-label="View Cart"></a>
 
           <Link to="/contactsupport">
             <button
@@ -73,15 +72,19 @@ const ContactSupport: React.FC = () => {
         {isOpen && (
           <div className="bg-gray-200 rounded-md p-4 absolute top-0 left-0 w-full h-40 flex justify-between z-50">
             <div className="grid gap-2">
-              <a href="" className="hover:text-gray-700 transition">
-                Home
-              </a>
-              <a href="#" className="hover:text-gray-700 transition">
-                Products
-              </a>
-              <a href="#" className="hover:text-gray-700 transition">
-                Contact Support
-              </a>
+              <Link to="/">
+                <a className="hover:text-gray-700 transition">Home</a>
+              </Link>
+
+              <Link to="/products">
+                <a className="hover:text-gray-700 transition">Products</a>
+              </Link>
+
+              <Link to="/contactsupport">
+                <a className="hover:text-gray-700 transition">
+                  Contact Support
+                </a>
+              </Link>
             </div>
             <button
               onClick={toggleMenu}

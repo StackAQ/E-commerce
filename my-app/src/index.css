@@ -31,7 +31,7 @@
     @apply font-normal text-base tracking-normal text-[#656567]
   }
   .yellow-btn {
-    @apply bg-yellow-400 px-4 py-3 font-medium rounded-3xl 
+    @apply bg-yellow-400 hover:bg-yellow-500 px-4 py-3 font-medium rounded-3xl 
   }
   .four {
     @apply rounded-xl border border-[#f1f1f3] p-1 lg:p-6 bg-white grid gap-1
@@ -50,5 +50,11 @@
   }
   .social-media {
     @apply p-2 rounded-full bg-black text-white hover:bg-white hover:text-black
+  }
+  .wear-white {
+    @apply bg-[#f7f7f8] hover:bg-gray-200 rounded-3xl border py-3 px-6 flex items-center gap-1
+  }
+  .subhead {
+    @apply text-[#262626] font-semibold text-xl
   }
 }
