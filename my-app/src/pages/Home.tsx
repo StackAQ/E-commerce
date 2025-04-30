@@ -369,7 +369,7 @@ const Home: React.FC = () => {
                   alt=""
                 />
                 <div
-                  className="absolute left-[85%] bottom-1 rounded-full"
+                  className="absolute left-[85%] top-[93%] rounded-full"
                   aria-label="View Cart"
                 >
                   <Link to="/productsdetails">
