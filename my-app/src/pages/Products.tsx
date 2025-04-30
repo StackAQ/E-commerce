@@ -258,7 +258,7 @@ const Products: React.FC = () => {
                     alt=""
                   />
                   <div
-                    className="absolute left-[68%] top-[96%] lg:top-[93%] rounded-full"
+                    className="absolute left-[68%] top-[93%] rounded-full"
                     aria-label="View Cart"
                   >
                     <Link to="/productsdetails">
