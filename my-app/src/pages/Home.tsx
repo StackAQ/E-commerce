@@ -458,7 +458,7 @@ const Home: React.FC = () => {
           <button className="yellow-btn w-56">View All Testimonials</button>
         </div>
         <div className="flex items-center gap-2">
-          <button className="size-10 rounded-full bg-white text-black">
+          <button className="size-8 grid place-content-center rounded-full bg-white text-black">
             <FaLessThan />
           </button>
           <div className="bg-[#f1f1f3] p-3 rounded-lg grid gap-4 grid-cols-1 lg:grid-cols-3">
@@ -481,7 +481,7 @@ const Home: React.FC = () => {
               </div>
             ))}
           </div>
-          <button className="size-10 rounded-full bg-black text-white">
+          <button className="size-8 grid place-content-center rounded-full bg-black text-white">
             <FaGreaterThan />
           </button>
         </div>
