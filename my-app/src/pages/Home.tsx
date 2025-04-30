@@ -390,7 +390,7 @@ const Home: React.FC = () => {
           ))}
         </div>
         <div className="lg:flex grid items-center gap-8">
-          <div className="flex item-center overflow-scroll lg:overflow-hidden">
+          <div className="hidden lg:flex item-center overflow-scroll lg:overflow-hidden">
             <div className="line"></div>
             <div className="line bg-[#262626]"></div>
             <div className="line"></div>
@@ -458,7 +458,7 @@ const Home: React.FC = () => {
           <button className="yellow-btn w-56">View All Testimonials</button>
         </div>
         <div className="flex items-center gap-2">
-          <button className="size-8 grid place-content-center rounded-full bg-white text-black">
+          <button className="size-8 place-content-center rounded-full bg-white text-black hidden lg:grid">
             <FaLessThan />
           </button>
           <div className="bg-[#f1f1f3] p-3 rounded-lg grid gap-4 grid-cols-1 lg:grid-cols-3">
@@ -481,7 +481,7 @@ const Home: React.FC = () => {
               </div>
             ))}
           </div>
-          <button className="size-8 grid place-content-center rounded-full bg-black text-white">
+          <button className="size-8 lg:grid hidden place-content-center rounded-full bg-black text-white">
             <FaGreaterThan />
           </button>
         </div>
