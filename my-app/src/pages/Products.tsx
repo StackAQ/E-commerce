@@ -222,17 +222,17 @@ const Products: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="flex items-center overflow-scroll lg:overflow-hidden justify-center font-medium gap-5 py-4 border-y border-[#f1f1f3]">
+        <div className="flex items-center overflow-scroll lg:overflow-hidden justify-center font-medium gap-5 py-4 px-4 border-y border-[#f1f1f3]">
           <button className="wear-white">ALL</button>
-          <button className="yellow-btn flex items-center gap-1">
+          <button className="yellow-btn flex items-center gap-1 w-fit">
             <img src="men-wear.png" alt="" />
             <span>MEN'S WEAR</span>
           </button>
-          <button className="wear-white">
+          <button className="wear-white w-fit">
             <img src="women-wear.png" alt="" />
             <span>WOMEN'S WEAR</span>
           </button>
-          <button className="wear-white">
+          <button className="wear-white w-fit">
             <img src="kid-wear.png" alt="" />
             <span>KID'S WEAR</span>
           </button>
@@ -286,7 +286,7 @@ const Products: React.FC = () => {
             ))}
           </div>
           <div className="lg:flex grid items-center gap-8">
-            <div className="flex item-center overflow-scroll lg:overflow-hidden">
+            <div className="lg:flex hidden item-center overflow-scroll lg:overflow-hidden">
               <div className="line"></div>
               <div className="line bg-[#262626]"></div>
               <div className="line"></div>
