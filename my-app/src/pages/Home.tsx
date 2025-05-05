@@ -441,7 +441,7 @@ const Home: React.FC = () => {
                   alt=""
                 />
                 <div
-                  className="absolute left-[85%] bottom-1 rounded-full"
+                  className="absolute left-[85%] top-[93%] rounded-full"
                   aria-label="View Cart"
                 >
                   <Link to="/productsdetails">
@@ -461,6 +461,7 @@ const Home: React.FC = () => {
             </motion.div>
           ))}
         </div>
+<<<<<<< HEAD
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -468,6 +469,10 @@ const Home: React.FC = () => {
           className="lg:flex grid items-center gap-8"
         >
           <div className="flex item-center overflow-scroll lg:overflow-hidden">
+=======
+        <div className="lg:flex grid items-center gap-8">
+          <div className="hidden lg:flex item-center overflow-scroll lg:overflow-hidden">
+>>>>>>> 9b407d418d210a6f732228f967a20cb14351aefd
             <div className="line"></div>
             <div className="line bg-[#262626]"></div>
             <div className="line"></div>
@@ -560,7 +565,7 @@ const Home: React.FC = () => {
           </motion.button>
         </div>
         <div className="flex items-center gap-2">
-          <button className="size-8 grid place-content-center rounded-full bg-white text-black">
+          <button className="size-8 place-content-center rounded-full bg-white text-black hidden lg:grid">
             <FaLessThan />
           </button>
           <div className="bg-[#f1f1f3] p-3 rounded-lg grid gap-4 grid-cols-1 lg:grid-cols-3">
@@ -586,7 +591,11 @@ const Home: React.FC = () => {
               </motion.div>
             ))}
           </div>
+<<<<<<< HEAD
           <motion.button className="size-8 grid place-content-center rounded-full bg-black text-white">
+=======
+          <button className="size-8 lg:grid hidden place-content-center rounded-full bg-black text-white">
+>>>>>>> 9b407d418d210a6f732228f967a20cb14351aefd
             <FaGreaterThan />
           </motion.button>
         </div>
