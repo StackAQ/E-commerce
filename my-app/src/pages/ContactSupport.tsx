@@ -16,6 +16,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const contacts = [
   { name: "Email", cap: "support@klothink.com" },
@@ -179,31 +180,60 @@ const ContactSupport: React.FC = () => {
       <div className="layout grid gap-10">
         <div className="flex lg:justify-between flex-col lg:flex-row">
           <div className="grid gap-4">
-            <div className="flex items-start gap-1 flex-col-reverse lg:flex-row">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex items-start gap-1 flex-col-reverse lg:flex-row"
+            >
               <h1 className="header-one">Klothink Support.</h1>
               <span className="normal-cap">Your Fashion Ally</span>
-            </div>
-            <p className="description">
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="description"
+            >
               24/7 Assistance for Seamless Shopping and Unmatched Customer
               Satisfaction.
-            </p>
+            </motion.p>
           </div>
 
           <div className="rounded-xl p-4 border border-[#F1F1F3] flex items-center gap-4 flex-col lg:flex-row">
             {contacts.map((each, index) => (
-              <div className="grid gap-1 font-semibold" key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="grid gap-1 font-semibold"
+                key={index}
+              >
                 <span className="text-[#656567] text-sm">{each.name}</span>
                 <span className="text-[#262626] text-base">{each.cap}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         <div className="grid gap-4">
-          <h3 className="description">Office Locations</h3>
+          <motion.h3
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="description"
+          >
+            Office Locations
+          </motion.h3>
           <div className="p-4 border border-[#F1F1F3] rounded-xl flex items-center gap-6 lg:justify-between flex-col lg:flex-row">
             {locations.map((each, index) => (
-              <div key={index} className="grid gap-4 font-medium">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                key={index}
+                className="grid gap-4 font-medium"
+              >
                 <div className="grid gap-1">
                   <span className="text-lg text-[#262626]">{each.name}</span>
                   <span className="text-sm text-[#656567]">{each.address}</span>
@@ -216,14 +246,19 @@ const ContactSupport: React.FC = () => {
                     Get Direction <FaArrowRight />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
 
       <div className="layout grid gap-10">
-        <div className="flex flex-col lg:flex-row lg:justify-between w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="flex flex-col lg:flex-row lg:justify-between w-full"
+        >
           <div className="grid gap-4">
             <div className="flex lg:flex-row flex-col-reverse gap-2">
               <h1 className="header-one">return policy</h1>
@@ -237,14 +272,20 @@ const ContactSupport: React.FC = () => {
           <button className="flex items-center gap-2 px-4 py-2 h-fit bg-[#F7F7F8] font-semibold rounded-3xl border border-[#F7F7F8]">
             Read Return Policy <FaArrowRight />
           </button>
-        </div>
+        </motion.div>
 
         <div className="p-4 border-[#F7F7F8] border rounded-2xl flex flex-col lg:flex-row items-center gap-4">
           {returnpolicy.map((e, index) => (
-            <div key={index} className="grid gap-2 font-medium">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              key={index}
+              className="grid gap-2 font-medium"
+            >
               <span className="text-[#262626]">{e.name}</span>
               <span className="text-[#656567]">{e.meaning}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -252,26 +293,47 @@ const ContactSupport: React.FC = () => {
       <div className="layout grid gap-10">
         <div className="flex flex-col lg:flex-row lg:justify-between w-full">
           <div className="grid gap-4">
-            <div className="flex lg:flex-row flex-col-reverse gap-2">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex lg:flex-row flex-col-reverse gap-2"
+            >
               <h1 className="header-one">Cancellation Policy</h1>
               <span className="normal-cap">Flexible Ordering Experience</span>
-            </div>
-            <p className="description">
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="description"
+            >
               Familiarize yourself with our cancellation policy to make changes
               to your order with ease.
-            </p>
+            </motion.p>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 h-fit bg-[#F7F7F8] font-semibold rounded-3xl border border-[#F7F7F8]">
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex items-center gap-2 px-4 py-2 h-fit bg-[#F7F7F8] font-semibold rounded-3xl border border-[#F7F7F8]"
+          >
             Read Cancellation Policy <FaArrowRight />
-          </button>
+          </motion.button>
         </div>
 
         <div className="p-4 border-[#F7F7F8] border rounded-2xl flex flex-col lg:flex-row items-center gap-4">
           {cancelpolicy.map((e, index) => (
-            <div key={index} className="grid gap-2 font-medium">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              key={index}
+              className="grid gap-2 font-medium"
+            >
               <span className="text-[#262626]">{e.name}</span>
               <span className="text-[#656567]">{e.meaning}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -279,15 +341,25 @@ const ContactSupport: React.FC = () => {
       {/* questions */}
       <div className="layout grid gap-8">
         <div className="grid gap-4">
-          <div className="flex flex-col-reverse lg:flex-row items-start gap-1">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex flex-col-reverse lg:flex-row items-start gap-1"
+          >
             <h1 className="header-one">questions? we have answers</h1>
             <span className="normal-cap">faq</span>
-          </div>
-          <span className="description">
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="description"
+          >
             Ease into the world of Klothink with clarity. Our FAQs cover a
             spectrum of topics, ensuring you have the information you need for a
             seemless shopping experience.
-          </span>
+          </motion.p>
         </div>
 
         <div className="flex items-start gap-8">

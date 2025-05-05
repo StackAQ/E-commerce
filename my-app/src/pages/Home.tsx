@@ -166,6 +166,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import {motion} from "framer-motion"
+
 const Home: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -254,38 +256,59 @@ const Home: React.FC = () => {
       {/* Elevate your style */}
       <div className="layout lg:flex grid lg:justify-between item-start gap-10 ">
         <div className="grid gap-10">
-          <div className="flex flex-col-reverse lg:flex-row items-start gap-1">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex flex-col-reverse lg:flex-row items-start gap-1"
+          >
             <h1 className="header-one">Elevate Your Style with Klothink</h1>
             <span className="normal-cap">Style Redefined.</span>
-          </div>
+          </motion.div>
           <span className="description">
             Explore a world of fashion at Klothink, where trends meet
             affordability. Immerse yourself in the latest styles and seize
             exclusive promotions.
           </span>
-          <div className="flex items-center gap-4 text-[#262626] w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex items-center gap-4 text-[#262626] w-full"
+          >
             <button className="flex items-center gap-2 yellow-btn">
               <FaShoppingBag /> Shop now
             </button>
             <button className="bg-[#f1f1f3] py-3 px-4 font-medium rounded-3xl">
               Contact us
             </button>
-          </div>
+          </motion.div>
           <div className="bg-[#F7F7F8] border-2 border-white p-2 lg:p-4 rounded-xl grid grid-cols-2 gap-4">
             {theFour.map((item, index) => (
-              <div key={index} className="four">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                key={index}
+                className="four"
+              >
                 <span className="font-semibold text-[#1a1a1a] text-xl lg:text-2xl uppercase">
                   {item.head}
                 </span>
                 <span className="description text-balance text-sm">
                   {item.cap}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
         <div className="lg:w-1/2 bg-[#F7F7F8] p-2 rounded-md grid gap-4">
-          <div className="flex justify-between items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex justify-between items-center"
+          >
             <button className="bg-white p-2 rounded-xl font-semibold">
               Best Seller
             </button>
@@ -297,18 +320,34 @@ const Home: React.FC = () => {
                 <FaGreaterThan />
               </button>
             </div>
-          </div>
-          <img src="yellow-shirt.png" alt="" />
+          </motion.div>
+          <motion.img
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            src="yellow-shirt.png"
+            alt=""
+          />
           <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center gap-3 bg-white">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex items-center gap-3 bg-white"
+            >
               <span className="text-[#262626]">Color</span>
               <div className="flex items-center gap-1">
                 <button className="color-btn bg-[#739CDA]"></button>
                 <button className="color-btn bg-[#DAA573]"></button>
                 <button className="color-btn bg-[#DAD673]"></button>
               </div>
-            </div>
-            <div className="flex items-center gap-3 bg-white px-2 py-[2px] rounded-xl">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex items-center gap-3 bg-white px-2 py-[2px] rounded-xl"
+            >
               <span className="text-[#262626]">Sizes</span>
               <div className="flex items-center gap-2">
                 <button className="size-btn">S</button>
@@ -316,10 +355,15 @@ const Home: React.FC = () => {
                 <button className="size-btn">L</button>
                 <button className="size-btn">XL</button>
               </div>
-            </div>
-            <button className="text-[#262626] font-medium text-sm bg-white py-1 rounded-3xl px-2">
+            </motion.div>
+            <motion.button
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="text-[#262626] font-medium text-sm bg-white py-1 rounded-3xl px-2"
+            >
               View Similar
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -328,26 +372,48 @@ const Home: React.FC = () => {
       <div className="layout grid gap-14">
         <div className="lg:flex grid items-center gap-10">
           <div className="grid gap-5">
-            <div className="flex items-start gap-2 flex-col-reverse lg:flex-row">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex items-start gap-2 flex-col-reverse lg:flex-row"
+            >
               <h1 className="header-one">discover fashion.</h1>
               <span className="normal-cap">products</span>
-            </div>
-            <p className="description">
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="description"
+            >
               Dive into a world of fashion innovation at Klothink. Our carefully
               curated collections bring together the latest trends and timeless
               classics, ensuring you find the perfect pieces for every occasion.
-            </p>
+            </motion.p>
           </div>
-          <button className="yellow-btn w-56">View All Products</button>
+          <motion.button className="yellow-btn w-56">
+            View All Products
+          </motion.button>
         </div>
         <div className="border-y border-[#F1F1F3] p-6 lg:flex grid justify-between items-center gap-4">
-          <div className="flex items-center gap-6 text-base font-medium uppercase lg:overflow-hidden overflow-scroll">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex items-center gap-6 text-base font-medium uppercase lg:overflow-hidden overflow-scroll"
+          >
             <button className="text-[#98989A]">ALL</button>
             <button className="text-[#262626]">MENSWEAR</button>
             <button className="text-[#98989A]">WOMENSWEAR</button>
             <button className="text-[#98989A]">KIDSWEAR</button>
-          </div>
-          <div className="flex items-center justify-between gap-2 lg:overflow-hidden overflow-scroll">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex items-center justify-between gap-2 lg:overflow-hidden overflow-scroll"
+          >
             <button className="bg-[#262626] px-5 py-3 text-white rounded-xl">
               Casual
             </button>
@@ -357,11 +423,17 @@ const Home: React.FC = () => {
             <button className="bg-white text-[#262626] px-5 py-3 rounded-xl">
               Party
             </button>
-          </div>
+          </motion.div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {product.map((each, index) => (
-            <div className="grid gap-2 overflow-hidden" key={index}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="grid gap-2 overflow-hidden"
+              key={index}
+            >
               <div className="relative">
                 <img
                   src={each.image}
@@ -386,10 +458,15 @@ const Home: React.FC = () => {
                 <span className="text-[#262626]">{each.name}</span>
                 <span className="text-[#4C4C4D]">{each.price}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-        <div className="lg:flex grid items-center gap-8">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="lg:flex grid items-center gap-8"
+        >
           <div className="flex item-center overflow-scroll lg:overflow-hidden">
             <div className="line"></div>
             <div className="line bg-[#262626]"></div>
@@ -406,26 +483,39 @@ const Home: React.FC = () => {
               <FaGreaterThan />
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* klothink experience */}
       <div className="layout grid gap-8">
         <div className="grid gap-4">
-          <div className="flex items-start gap-2 flex-col-reverse lg:flex-row">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex items-start gap-2 flex-col-reverse lg:flex-row"
+          >
             <h1 className="header-one">the Klothink experience</h1>
             <span className="normal-cap">about us</span>
-          </div>
-          <span className="description">
+          </motion.div>
+          <motion.span
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="description"
+          >
             At Klothink, we breathe life into fashion, blending creativity with
             commitment. Our journey is fueled by a dedicating to delivering
             unparalleled style and quality. Join us in redefining fashion and
             embracing a community where every purchase tells a story
-          </span>
+          </motion.span>
         </div>
         <div className="p-3 rounded-xl bg-[#f1f1f3] grid gap-4 grid-cols-1 lg:grid-cols-3">
           {about.map((e, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
               className="p-2 rounded-xl bg-white ring-1 ring-[#f1f1f3] grid gap-2"
               key={index}
             >
@@ -436,7 +526,7 @@ const Home: React.FC = () => {
                 </span>
               </div>
               <span className="text-sm text-[#656567]">{e.cap}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -445,17 +535,29 @@ const Home: React.FC = () => {
       <div className="layout grid gap-8">
         <div className="grid lg:flex justify-between gap-12 items-center">
           <div className="grid gap-4">
-            <div className="flex items-start gap-2 flex-col-reverse lg:flex-row">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex items-start gap-2 flex-col-reverse lg:flex-row"
+            >
               <h1 className="header-one">customer love.</h1>
               <span className="normal-cap">testimonials</span>
-            </div>
-            <span className="description">
+            </motion.div>
+            <motion.span
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="description"
+            >
               At Klothink, our customers are the heartbeat of our brand. Explore
               the heartbeat testimonials shared by those who have experienced
               the magic of Klothink fashion.
-            </span>
+            </motion.span>
           </div>
-          <button className="yellow-btn w-56">View All Testimonials</button>
+          <motion.button className="yellow-btn w-56">
+            View All Testimonials
+          </motion.button>
         </div>
         <div className="flex items-center gap-2">
           <button className="size-8 grid place-content-center rounded-full bg-white text-black">
@@ -463,7 +565,10 @@ const Home: React.FC = () => {
           </button>
           <div className="bg-[#f1f1f3] p-3 rounded-lg grid gap-4 grid-cols-1 lg:grid-cols-3">
             {testimonials.map((each, index) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
                 className="border-1 border-[#656567] p-3 rounded-xl bg-white grid gap-3 text-xs"
                 key={index}
               >
@@ -478,36 +583,46 @@ const Home: React.FC = () => {
                   <img src="asteric-icon.png" className="size-10" alt="" />
                 </div>
                 <span className="">{each.cap}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <button className="size-8 grid place-content-center rounded-full bg-black text-white">
+          <motion.button className="size-8 grid place-content-center rounded-full bg-black text-white">
             <FaGreaterThan />
-          </button>
+          </motion.button>
         </div>
       </div>
 
       {/* questions */}
       <div className="layout grid gap-8">
         <div className="grid gap-4">
-          <div className="flex flex-col-reverse lg:flex-row items-start gap-1">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex flex-col-reverse lg:flex-row items-start gap-1"
+          >
             <h1 className="header-one">questions? we have answers</h1>
             <span className="normal-cap">faq</span>
-          </div>
-          <span className="description">
+          </motion.div>
+          <motion.span className="description">
             Ease into the world of Klothink with clarity. Our FAQs cover a
             spectrum of topics, ensuring you have the information you need for a
             seemless shopping experience.
-          </span>
+          </motion.span>
         </div>
-        <div className="flex items-center gap-8 py-4 border-y-2 border-[#f1f1f3] text-base lg:text-lg font-medium overflow-x-scroll lg:overflow-hidden">
+        <motion.div className="flex items-center gap-8 py-4 border-y-2 border-[#f1f1f3] text-base lg:text-lg font-medium overflow-x-scroll lg:overflow-hidden">
           <button className="text-black">ALL</button>
           <button className="text-[#656567]">ORDERING</button>
           <button className="text-[#656567]">SHIPPING</button>
           <button className="text-[#656567]">RETURNS</button>
           <button className="text-[#656567]">CUSTOMER SUPPORT</button>
-        </div>
-        <div className="flex items-start gap-8">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="flex items-start gap-8"
+        >
           <div className="lg:grid hidden gap-4">
             {questionOne.map((e, index) => (
               <div className="question-div" key={index}>
@@ -553,12 +668,12 @@ const Home: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* seamless experience */}
       <div className="layout grid gap-8">
-        <div className="grid gap-4">
+        <motion.div className="grid gap-4">
           <div className="flex items-start flex-col-reverse lg:flex-row gap-1">
             <h1 className="header-one">seamless experience.</h1>
             <span className="normal-cap">how it works?</span>
@@ -568,11 +683,17 @@ const Home: React.FC = () => {
             make fashion accessible. Explore the journey from discovering the
             latest trends to receiving your handpicked styles with ease.
           </p>
-        </div>
+        </motion.div>
 
         <div className="p-4 rounded-2xl bg-[#f7f7f8] grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {experience.map((each, index) => (
-            <div key={index} className="p-2 rounded-2xl bg-white grid gap-1">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              key={index}
+              className="p-2 rounded-2xl bg-white grid gap-1"
+            >
               <h1 className="font-bold text-[#bbbbbd] text-lg md:text-xl lg:text-5xl">
                 {each.num}
               </h1>
@@ -582,7 +703,7 @@ const Home: React.FC = () => {
               <span className="text-[#98989A] text-xs lg:text-base">
                 {each.cap}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

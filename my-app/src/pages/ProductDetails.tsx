@@ -16,6 +16,8 @@ import {
   FaCheck,
 } from "react-icons/fa";
 
+import {motion} from "framer-motion"
+
 interface Questions {
   text: string;
 }
@@ -147,19 +149,30 @@ const ProductDetails: React.FC = () => {
       </nav>
 
       <div className="flex flex-col lg:flex-row item-start gap-8 layout">
-        <img
+        <motion.img
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
           src="/dress-details-normal.png"
           className="hidden lg:grid h-fit"
           alt=""
         />
-        <img
+        <motion.img
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
           src="/dress-details-mobile.png"
           className="block lg:hidden"
           alt=""
         />
         <div className="grid gap-4 w-full">
           <div className="flex items-start flex-col lg:flex-row justify-between gap-4 w-full">
-            <div className="grid gap-2">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="grid gap-2"
+            >
               <div className="flex items-center gap-2">
                 <span className="description">Men's Casual Outerwear</span>
                 <span className="text-sm px-2 py-1 bg-yellow-400 rounded-3xl">
@@ -170,29 +183,49 @@ const ProductDetails: React.FC = () => {
               <span className="font-semibold text-[#262626] text-2xl">
                 $69.99
               </span>
-            </div>
+            </motion.div>
 
-            <div className="flex items-center lg:gap-4 justify-around w-full lg:w-fit">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex items-center lg:gap-4 justify-around w-full lg:w-fit"
+            >
               <button className="flex items-center gap-2 px-4 py-2 rounded-3xl hover:text-black text-white hover:bg-white hover:border hover:border-[#F1F1F3] bg-black">
                 <FaShoppingBag /> Buy Now
               </button>
               <button className="flex items-center gap-2 px-4 py-2 rounded-3xl text-black hover:text-white hover:bg-black border border-[#F1F1F3]">
                 <FaShoppingBag /> Buy Now
               </button>
-            </div>
+            </motion.div>
           </div>
           <div className="border border-[#F1F1F3] p-6 rounded-md grid gap-4 grid-cols-2 text-sm lg:text-base">
-            <div className="grid gap-1">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="grid gap-1"
+            >
               <span className="text-[#262626] font-semibold">Material</span>
               <span className="text-[#656567]">
                 High-Quality Denim (100% Cotton)
               </span>
-            </div>
-            <div className="grid gap-1">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="grid gap-1"
+            >
               <span className="font-semibold text-[#262626]">Fit</span>
               <span className="text-[#656567]">Classic fit</span>
-            </div>
-            <div className="grid gap-1">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="grid gap-1"
+            >
               <span className="text-[#262626] font-semibold">Color</span>
               <div className="p-1 rounded-3xl flex items-center gap-1">
                 <div className="size-6 bg-black text-white p-2 grid place-content-center rounded-full">
@@ -201,8 +234,13 @@ const ProductDetails: React.FC = () => {
                 <div className="size-6 bg-[#DAA573] text-white p-2 grid place-content-center rounded-full"></div>
                 <div className="size-6 bg-[#DAD673] text-white p-2 grid place-content-center rounded-full"></div>
               </div>
-            </div>
-            <div className="grid gap-1">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="grid gap-1"
+            >
               <span className="font-semibold text-[#262626]">Sizes</span>
               <div className="flex items-center gap-2 font-medium">
                 <div className="size-6 p-2 bg-[#F7F7F8] grid place-content-center">
@@ -221,9 +259,14 @@ const ProductDetails: React.FC = () => {
                   XXL
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
-          <div className="p-6 border border-[#F1F1F3] rounded-md grid gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="p-6 border border-[#F1F1F3] rounded-md grid gap-4"
+          >
             <span className="subhead">Shipping Information</span>
             <ul className="pl-6 list-disc">
               <li className="text-[#656567]">
@@ -233,25 +276,57 @@ const ProductDetails: React.FC = () => {
                 Express shipping options available at checkout
               </li>
             </ul>
-          </div>
+          </motion.div>
           <div className="p-6 border border-[#F1F1F3] rounded-md grid gap-4">
-            <span className="subhead">Features</span>
+            <motion.span
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="subhead"
+            >
+              Features
+            </motion.span>
             <ul className="pl-6 list-disc">
-              <li className="text-[#656567]">
+              <motion.li
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="text-[#656567]"
+              >
                 Distressed detailing for a rugged look
-              </li>
-              <li className="text-[#656567]">
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="text-[#656567]"
+              >
                 Button-up front closure with engraved metal buttons
-              </li>
-              <li className="text-[#656567]">
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="text-[#656567]"
+              >
                 Two side pockets for added functionality
-              </li>
-              <li className="text-[#656567]">
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="text-[#656567]"
+              >
                 Adjustable buttoned cuffs for a personalized fit
-              </li>
-              <li className="text-[#656567]">
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="text-[#656567]"
+              >
                 Back waist tabs for customizable styling
-              </li>
+              </motion.li>
             </ul>
           </div>
         </div>
@@ -259,24 +334,42 @@ const ProductDetails: React.FC = () => {
 
       <div className="layout grid gap-6">
         <div className="grid gap-4">
-          <div className="flex items-start gap-1 flex-col-reverse lg:flex-row">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex items-start gap-1 flex-col-reverse lg:flex-row"
+          >
             <h1 className="header-one">reviews</h1>
             <span className="normal-cap">product reviews</span>
-          </div>
-          <p className="description">
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="description"
+          >
             At Klothink, our customers are the heartbeat of our brand. Explore
             the heartfelt testimonials shared by those who have experienced the
             magic of Klothink fashion.
-          </p>
+          </motion.p>
         </div>
 
         <div className="flex items-center gap-2">
-          <button className="size-8 p-2 rounded-full bg-white text-black grid place-content-center">
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="size-8 p-2 rounded-full bg-white text-black grid place-content-center"
+          >
             <FaLessThan />
-          </button>
+          </motion.button>
           <div className="bg-[#f1f1f3] p-3 rounded-lg grid gap-4 grid-cols-1 lg:grid-cols-3">
             {testimonials.map((each, index) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
                 className="border-1 border-[#656567] p-3 rounded-xl bg-white grid gap-3 text-xs"
                 key={index}
               >
@@ -291,42 +384,68 @@ const ProductDetails: React.FC = () => {
                   <img src="asteric-icon.png" className="size-10" alt="" />
                 </div>
                 <span className="">{each.cap}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <button className="size-8 rounded-full bg-black text-white p-2 grid place-content-center">
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="size-8 rounded-full bg-black text-white p-2 grid place-content-center"
+          >
             <FaGreaterThan />
-          </button>
+          </motion.button>
         </div>
       </div>
 
       {/* questions */}
       <div className="layout grid gap-8">
         <div className="grid gap-4">
-          <div className="flex flex-col-reverse lg:flex-row items-start gap-1">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex flex-col-reverse lg:flex-row items-start gap-1"
+          >
             <h1 className="header-one">Frequently asked questions</h1>
             <span className="normal-cap">faq</span>
-          </div>
-          <span className="description">
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="description"
+          >
             Ease into the world of Klothink with clarity. Our FAQs cover a
             spectrum of topics, ensuring you have the information you need for a
             seamless shopping experience.
-          </span>
+          </motion.p>
         </div>
 
         <div className="flex items-start gap-8">
           <div className="lg:grid hidden gap-4">
             {questionOne.map((e, index) => (
-              <div className="question-div" key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="question-div"
+                key={index}
+              >
                 <span className="text-sm lg:text-base">{e.text}</span>
                 <button>
                   <FaPlus />
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
           <div className="grid gap-4">
-            <div className="grid gap-3 bg-[#f1f1f3] rounded-2xl p-2">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="grid gap-3 bg-[#f1f1f3] rounded-2xl p-2"
+            >
               <div className="question-div border-0 bg-transparent">
                 <span className="text-sm lg:text-base">
                   How can I place an order on Klothink?
@@ -339,25 +458,37 @@ const ProductDetails: React.FC = () => {
                 Ordering is easy! Simply browse our website. add items to your
                 cart, and proceed to{" "}
               </span>
-            </div>
+            </motion.div>
 
             {questionTwo.map((e, index) => (
-              <div className="question-div" key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="question-div"
+                key={index}
+              >
                 <span className="text-sm lg:text-base">{e.text}</span>
                 <button>
                   <FaPlus />
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
           <div className="lg:grid hidden gap-4">
             {questionThree.map((e, index) => (
-              <div className="question-div" key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="question-div"
+                key={index}
+              >
                 <span className="text-sm lg:text-base">{e.text}</span>
                 <button>
                   <FaPlus />
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

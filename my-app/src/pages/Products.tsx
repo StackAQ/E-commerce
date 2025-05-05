@@ -16,6 +16,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import {motion} from "framer-motion"
+
 interface Discover {
   head: string;
   cap: string;
@@ -201,7 +203,12 @@ const Products: React.FC = () => {
       {/* discover now */}
       <div className="layout grid gap-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-          <div className="grid gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="grid gap-8"
+          >
             <div className="flex items-start gap-1 flex-col-reverse lg:flex-row">
               <h2 className="header-one">DISCOVER NOW</h2>
               <span className="normal-cap">products</span>
@@ -212,17 +219,28 @@ const Products: React.FC = () => {
               offering you a diverse array of clothing items that resonate with
               your unique style.
             </p>
-          </div>
+          </motion.div>
           <div className="flex items-start flex-col lg:flex-row gap-5">
             {discover.map((e, index) => (
-              <div className="p-4 grid gap-3" key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="p-4 grid gap-3"
+                key={index}
+              >
                 <span className="subhead">{e.head}</span>
                 <span className="text-[#656567] ">{e.cap}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-        <div className="flex items-center overflow-scroll lg:overflow-hidden justify-center font-medium gap-5 py-4 border-y border-[#f1f1f3]">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="flex items-center overflow-scroll lg:overflow-hidden justify-center font-medium gap-5 py-4 border-y border-[#f1f1f3]"
+        >
           <button className="wear-white">ALL</button>
           <button className="yellow-btn flex items-center gap-1">
             <img src="men-wear.png" alt="" />
@@ -236,18 +254,21 @@ const Products: React.FC = () => {
             <img src="kid-wear.png" alt="" />
             <span>KID'S WEAR</span>
           </button>
-        </div>
+        </motion.div>
         <div className="grid gap-6">
-          <div className="grid gap-3">
+          <motion.div className="grid gap-3">
             <span className="subhead">Casual Collection</span>
             <p className="description">
               Discover our versatile men's casual wear collection, where comfort
               meets contemporary fashion.
             </p>
-          </div>
+          </motion.div>
           <div className="pt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {casual.map((each, index) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
                 className="grid gap-5 overflow-hidden border border-[#F1F1F3] rounded-2xl "
                 key={index}
               >
@@ -282,10 +303,15 @@ const Products: React.FC = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <div className="lg:flex grid items-center gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="lg:flex grid items-center gap-8"
+          >
             <div className="flex item-center overflow-scroll lg:overflow-hidden">
               <div className="line"></div>
               <div className="line bg-[#262626]"></div>
@@ -302,19 +328,27 @@ const Products: React.FC = () => {
                 <FaGreaterThan />
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="grid gap-6">
-          <div className="grid gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="grid gap-3"
+          >
             <span className="subhead">Formal Elegance</span>
             <p className="description">
               Explore timeless elegance with our Formal Elegance collection,
               featuring refined pieces for a polished look.
             </p>
-          </div>
+          </motion.div>
           <div className="pt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {formal.map((each, index) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
                 className="grid gap-5 overflow-hidden border border-[#F1F1F3] rounded-2xl "
                 key={index}
               >
@@ -349,10 +383,15 @@ const Products: React.FC = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <div className="lg:flex grid items-center gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="lg:flex grid items-center gap-8"
+          >
             <div className="flex item-center overflow-scroll lg:overflow-hidden">
               <div className="line"></div>
               <div className="line bg-[#262626]"></div>
@@ -369,19 +408,27 @@ const Products: React.FC = () => {
                 <FaGreaterThan />
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="grid gap-6">
-          <div className="grid gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="grid gap-3"
+          >
             <span className="subhead">Active Lifestyle</span>
             <p className="description">
               Embrace an active lifestyle with our performance-driven men's
               wear, designed for comfort and flexibility.
             </p>
-          </div>
+          </motion.div>
           <div className="pt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {lifestyle.map((each, index) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
                 className="grid gap-5 overflow-hidden border border-[#F1F1F3] rounded-2xl "
                 key={index}
               >
@@ -416,10 +463,15 @@ const Products: React.FC = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <div className="lg:flex grid items-center gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="lg:flex grid items-center gap-8"
+          >
             <div className="flex item-center overflow-scroll lg:overflow-hidden">
               <div className="line"></div>
               <div className="line bg-[#262626]"></div>
@@ -436,7 +488,7 @@ const Products: React.FC = () => {
                 <FaGreaterThan />
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
