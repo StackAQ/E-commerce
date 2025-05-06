@@ -288,7 +288,7 @@ const Home: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: index * 0.4 }}  
+                transition={{ duration: 1, delay: index * 0.4 }}
                 key={index}
                 className="four"
               >
@@ -591,11 +591,9 @@ const Home: React.FC = () => {
             ))}
           </div>
 
-          <motion.button className="size-8 grid place-content-center rounded-full bg-black text-white">
-            <button className="size-8 lg:grid hidden place-content-center rounded-full bg-black text-white">
-              <FaGreaterThan />
-            </button>
-          </motion.button>
+          <button className="size-8 lg:grid hidden place-content-center rounded-full bg-black text-white">
+            <FaGreaterThan />
+          </button>
         </div>
       </div>
 
