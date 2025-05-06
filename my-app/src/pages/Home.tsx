@@ -166,7 +166,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 
 const Home: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -461,7 +461,6 @@ const Home: React.FC = () => {
             </motion.div>
           ))}
         </div>
-<<<<<<< HEAD
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -469,24 +468,24 @@ const Home: React.FC = () => {
           className="lg:flex grid items-center gap-8"
         >
           <div className="flex item-center overflow-scroll lg:overflow-hidden">
-=======
-        <div className="lg:flex grid items-center gap-8">
-          <div className="hidden lg:flex item-center overflow-scroll lg:overflow-hidden">
->>>>>>> 9b407d418d210a6f732228f967a20cb14351aefd
-            <div className="line"></div>
-            <div className="line bg-[#262626]"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-          </div>
-          <div className="flex items-center gap-2">
-            <button className="bg-white text-black p-2 rounded-full">
-              <FaLessThan />
-            </button>
-            <button className="bg-black text-white p-2 rounded-full">
-              <FaGreaterThan />
-            </button>
+            <div className="lg:flex grid items-center gap-8">
+              <div className="hidden lg:flex item-center overflow-scroll lg:overflow-hidden">
+                <div className="line"></div>
+                <div className="line bg-[#262626]"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button className="bg-white text-black p-2 rounded-full">
+                  <FaLessThan />
+                </button>
+                <button className="bg-black text-white p-2 rounded-full">
+                  <FaGreaterThan />
+                </button>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -591,12 +590,11 @@ const Home: React.FC = () => {
               </motion.div>
             ))}
           </div>
-<<<<<<< HEAD
+
           <motion.button className="size-8 grid place-content-center rounded-full bg-black text-white">
-=======
-          <button className="size-8 lg:grid hidden place-content-center rounded-full bg-black text-white">
->>>>>>> 9b407d418d210a6f732228f967a20cb14351aefd
-            <FaGreaterThan />
+            <button className="size-8 lg:grid hidden place-content-center rounded-full bg-black text-white">
+              <FaGreaterThan />
+            </button>
           </motion.button>
         </div>
       </div>
