@@ -16,7 +16,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 
 interface Discover {
   head: string;
@@ -235,29 +235,28 @@ const Products: React.FC = () => {
             ))}
           </div>
         </div>
-<<<<<<< HEAD
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="flex items-center overflow-scroll lg:overflow-hidden justify-center font-medium gap-5 py-4 border-y border-[#f1f1f3]"
         >
-=======
-        <div className="flex items-center overflow-scroll lg:overflow-hidden justify-center font-medium gap-5 py-4 px-4 border-y border-[#f1f1f3]">
->>>>>>> 9b407d418d210a6f732228f967a20cb14351aefd
-          <button className="wear-white">ALL</button>
-          <button className="yellow-btn flex items-center gap-1 w-fit">
-            <img src="men-wear.png" alt="" />
-            <span>MEN'S WEAR</span>
-          </button>
-          <button className="wear-white w-fit">
-            <img src="women-wear.png" alt="" />
-            <span>WOMEN'S WEAR</span>
-          </button>
-          <button className="wear-white w-fit">
-            <img src="kid-wear.png" alt="" />
-            <span>KID'S WEAR</span>
-          </button>
+          <div className="flex items-center overflow-scroll lg:overflow-hidden justify-center font-medium gap-5 py-4 px-4 border-y border-[#f1f1f3]">
+            <button className="wear-white">ALL</button>
+            <button className="yellow-btn flex items-center gap-1 w-fit">
+              <img src="men-wear.png" alt="" />
+              <span>MEN'S WEAR</span>
+            </button>
+            <button className="wear-white w-fit">
+              <img src="women-wear.png" alt="" />
+              <span>WOMEN'S WEAR</span>
+            </button>
+            <button className="wear-white w-fit">
+              <img src="kid-wear.png" alt="" />
+              <span>KID'S WEAR</span>
+            </button>
+          </div>
         </motion.div>
         <div className="grid gap-6">
           <motion.div className="grid gap-3">
@@ -310,7 +309,6 @@ const Products: React.FC = () => {
               </motion.div>
             ))}
           </div>
-<<<<<<< HEAD
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -318,24 +316,24 @@ const Products: React.FC = () => {
             className="lg:flex grid items-center gap-8"
           >
             <div className="flex item-center overflow-scroll lg:overflow-hidden">
-=======
-          <div className="lg:flex grid items-center gap-8">
-            <div className="lg:flex hidden item-center overflow-scroll lg:overflow-hidden">
->>>>>>> 9b407d418d210a6f732228f967a20cb14351aefd
-              <div className="line"></div>
-              <div className="line bg-[#262626]"></div>
-              <div className="line"></div>
-              <div className="line"></div>
-              <div className="line"></div>
-              <div className="line"></div>
-            </div>
-            <div className="flex items-center gap-2">
-              <button className="bg-white text-black p-2 rounded-full">
-                <FaLessThan />
-              </button>
-              <button className="bg-black text-white p-2 rounded-full">
-                <FaGreaterThan />
-              </button>
+              <div className="lg:flex grid items-center gap-8">
+                <div className="lg:flex hidden item-center overflow-scroll lg:overflow-hidden">
+                  <div className="line"></div>
+                  <div className="line bg-[#262626]"></div>
+                  <div className="line"></div>
+                  <div className="line"></div>
+                  <div className="line"></div>
+                  <div className="line"></div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button className="bg-white text-black p-2 rounded-full">
+                    <FaLessThan />
+                  </button>
+                  <button className="bg-black text-white p-2 rounded-full">
+                    <FaGreaterThan />
+                  </button>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
