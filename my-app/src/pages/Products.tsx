@@ -225,7 +225,7 @@ const Products: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
                 className="p-4 grid gap-3"
                 key={index}
               >
@@ -271,7 +271,7 @@ const Products: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
                 className="grid gap-5 overflow-hidden border border-[#F1F1F3] rounded-2xl "
                 key={index}
               >
@@ -355,7 +355,7 @@ const Products: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
                 className="grid gap-5 overflow-hidden border border-[#F1F1F3] rounded-2xl "
                 key={index}
               >
@@ -435,7 +435,7 @@ const Products: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
                 className="grid gap-5 overflow-hidden border border-[#F1F1F3] rounded-2xl "
                 key={index}
               >

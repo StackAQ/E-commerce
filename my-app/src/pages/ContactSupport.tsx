@@ -205,7 +205,7 @@ const ContactSupport: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
                 className="grid gap-1 font-semibold"
                 key={index}
               >
@@ -230,7 +230,7 @@ const ContactSupport: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
                 key={index}
                 className="grid gap-4 font-medium"
               >
@@ -279,7 +279,7 @@ const ContactSupport: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: index * 0.2 }}
               key={index}
               className="grid gap-2 font-medium"
             >
@@ -327,7 +327,7 @@ const ContactSupport: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: index * 0.2 }}
               key={index}
               className="grid gap-2 font-medium"
             >

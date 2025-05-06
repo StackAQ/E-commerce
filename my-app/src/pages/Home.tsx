@@ -288,7 +288,7 @@ const Home: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: index * 0.4 }}  
                 key={index}
                 className="four"
               >
@@ -430,7 +430,7 @@ const Home: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: index * 0.2 }}
               className="grid gap-2 overflow-hidden"
               key={index}
             >
@@ -519,7 +519,7 @@ const Home: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: index * 0.2 }}
               className="p-2 rounded-xl bg-white ring-1 ring-[#f1f1f3] grid gap-2"
               key={index}
             >
@@ -572,7 +572,7 @@ const Home: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
                 className="border-1 border-[#656567] p-3 rounded-xl bg-white grid gap-3 text-xs"
                 key={index}
               >
@@ -697,7 +697,7 @@ const Home: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: index * 0.2 }}
               key={index}
               className="p-2 rounded-2xl bg-white grid gap-1"
             >
