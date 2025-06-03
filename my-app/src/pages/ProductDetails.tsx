@@ -66,10 +66,21 @@ const questionThree: Questions[] = [
   { text: "Are my personal details secure on Klothink?" },
 ];
 
+import { useParams } from "react-router-dom";
+import { product } from "../libs/data";
+import Products from "./Products";
+
 const ProductDetails: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const { id } = useParams<{ id: string }>()
+  const productdetail = product.find((p) => p.id === id)
+
+  if (!productdetail) {
+    return <div className="text-3xl font-bold">Product not found</div>
+  }
 
   return (
     <div className="font-manrope">

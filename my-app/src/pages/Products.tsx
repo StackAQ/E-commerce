@@ -6,13 +6,9 @@ import {
   FaTimes,
   FaGreaterThan,
   FaLessThan,
-  FaShoppingBag,
-  FaPlus,
-  FaMinus,
   FaFacebook,
   FaTwitter,
   FaLinkedin,
-  FaShoppingBasket,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -295,7 +291,7 @@ const Products: React.FC = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="grid font-medium text-base p-3">
+                <div className="grid font-medium text-base p-3 gap-2">
                   <span className="text-[#262626] text-lg lg:text-xl font-semibold">
                     {each.name}
                   </span>

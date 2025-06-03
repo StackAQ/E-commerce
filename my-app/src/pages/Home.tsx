@@ -1,154 +1,3 @@
-interface Four {
-  head: string;
-  cap: string;
-}
-
-interface Products {
-  image: string;
-  name: string;
-  price: string;
-}
-
-interface Abouts {
-  img: string;
-  head: string;
-  cap: string;
-}
-
-interface Questions {
-  text: string;
-}
-
-interface Experience {
-  num: string;
-  head: string;
-  cap: string;
-}
-
-const theFour: Four[] = [
-  { head: "Over 1000+", cap: "Trendsetting Styles" },
-  { head: "99%", cap: "Customer Satisfaction Rate" },
-  { head: "24/7", cap: "Shopping Convenience" },
-  { head: "30-Day", cap: "Hassle-Free Returns" },
-];
-
-const product: Products[] = [
-  {
-    image: "/crazy-blue-jean.png",
-    name: "Classic Denim Jeans",
-    price: "$49.99",
-  },
-  {
-    image: "/green-hoodie.png",
-    name: "Cozy Comfort Hoodie",
-    price: "$39.99",
-  },
-  {
-    image: "/red-shirt.png",
-    name: "Classic Polo Shirt",
-    price: "$29.99",
-  },
-  {
-    image: "/normal-blue-jean.png",
-    name: "Chino Pants",
-    price: "$44.99",
-  },
-];
-
-const about: Abouts[] = [
-  {
-    img: "/star-icon.png",
-    head: "Passionate Craftsmanship",
-    cap: "Every garment at Klothink is crafted with passion reflecting our commitment to quality and innovation.",
-  },
-  {
-    img: "/fashion-icon.png",
-    head: "Fashion Forward",
-    cap: "We're trendsetters, curating styles that empower and inspire confidence.",
-  },
-  {
-    img: "/loud-icon.png",
-    head: "Customer-Centric Approach",
-    cap: "At Klothink, our customers are at the heart of everything we do",
-  },
-  {
-    img: "/bulb-icon.png",
-    head: "Global Inspiration",
-    cap: "Influenced by global trends, we bring you a diverse and dynamic collection",
-  },
-  {
-    img: "/shine-icon.png",
-    head: "Empowering Your Style",
-    cap: "Beyond clothing, Klothink is a lifestyle. Join us on a journey of self-expression.",
-  },
-  {
-    img: "/sun-icon.png",
-    head: "Sustainable Practices",
-    cap: "Klothink is committed to sustainability, integrating eco-friendly practices into our production process.",
-  },
-];
-
-const testimonials: Abouts[] = [
-  {
-    img: "/testimonial-red.png",
-    head: "Sarah Thomson",
-    cap: "Klothink exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!",
-  },
-  {
-    img: "/testimonial-white.png",
-    head: "Rajesh Patel",
-    cap: "Absolutely love the style and warmth of the jacket. A perfect blend of fashion and functionality",
-  },
-  {
-    img: "/testimonial-yellow.png",
-    head: "Emily Walker",
-    cap: "Adorable and comfortable! My daughter loves her new outfit. Thank you, Klothink, for dressing our little fashionista.",
-  },
-];
-
-const questionOne: Questions[] = [
-  { text: "Can I modify my order after placing it?" },
-  { text: "How can I initiate a return?" },
-  { text: "How can I unsubscribe from the newsletter?" },
-  { text: "Do you offer exchanges for products?" },
-];
-
-const questionTwo: Questions[] = [
-  { text: "What payment methods do you accept?" },
-  { text: "How can I track my order?" },
-  { text: "What is your shipping policy?" },
-];
-
-const questionThree: Questions[] = [
-  { text: "Are there any additional fees for returns?" },
-  { text: "How do I create an account on Klothink?" },
-  { text: "Can I change my account information?" },
-  { text: "Are my personal details secure on Klothink?" },
-];
-
-const experience: Experience[] = [
-  {
-    num: "01",
-    head: "Discover Trends",
-    cap: "Explore our curated collection of over 1000 styles.",
-  },
-  {
-    num: "02",
-    head: "Secure Checkout",
-    cap: "Add your items to the cart and proceed to our secure checkout.",
-  },
-  {
-    num: "03",
-    head: "Swift Dispatch",
-    cap: "Experience 95% same-day dispatch on orders.",
-  },
-  {
-    num: "04",
-    head: "Unbox Happiness",
-    cap: "Receive your carefully packaged Klothink order.",
-  },
-];
-
 import React, { useState } from "react";
 import "../index.css";
 import {
@@ -167,6 +16,17 @@ import {
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
+
+import {
+  theFour,
+  product,
+  about,
+  testimonials,
+  questionOne,
+  questionTwo,
+  questionThree,
+  experience
+} from "../libs/data";
 
 const Home: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -426,7 +286,7 @@ const Home: React.FC = () => {
           </motion.div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {product.map((each, index) => (
+          {product.map((product, index) => (
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -436,7 +296,7 @@ const Home: React.FC = () => {
             >
               <div className="relative">
                 <img
-                  src={each.image}
+                  src={product.image}
                   className="w-full bg-[#F7F7F8] p-4 rounded-2xl"
                   alt=""
                 />
@@ -444,7 +304,7 @@ const Home: React.FC = () => {
                   className="absolute left-[85%] top-[93%] rounded-full"
                   aria-label="View Cart"
                 >
-                  <Link to="/productsdetails">
+                  <Link to={`/product\${product.id}`} key={product.id}>
                     <button
                       className="p-3 rounded-full bg-yellow-400 text-xl hover:bg-yellow-500 transition"
                       aria-label="Shopping Cart"
@@ -455,8 +315,8 @@ const Home: React.FC = () => {
                 </div>
               </div>
               <div className="grid gap-1 font-medium text-base">
-                <span className="text-[#262626]">{each.name}</span>
-                <span className="text-[#4C4C4D]">{each.price}</span>
+                <span className="text-[#262626]">{product.name}</span>
+                <span className="text-[#4C4C4D]">{product.price}</span>
               </div>
             </motion.div>
           ))}
