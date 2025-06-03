@@ -6,10 +6,12 @@ import Home from "./pages/Home";
 import Products from "./pages/Products"
 import ProductDetails from "./pages/ProductDetails"
 import ContactSupport from "./pages/ContactSupport"
+import ScrollToTop from "./libs/ScrollToTop";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />

@@ -32,86 +32,7 @@ const discover: Discover[] = [
   { head: "Over 1,500 +", cap: "curated fashion products." },
 ];
 
-const casual: Products[] = [
-  {
-    image: "/crazy-blue-jean.png",
-    name: "Classic Denim Jeans",
-    cap: "Slim Fit",
-    price: "$49.99",
-  },
-  {
-    image: "/green-hoodie.png",
-    name: "Cozy Comfort Hoodie",
-    cap: "Relaxed Fit",
-    price: "$39.99",
-  },
-  {
-    image: "/red-shirt.png",
-    name: "Classic Polo Shirt",
-    cap: "Regular Fit",
-    price: "$29.99",
-  },
-  {
-    image: "/normal-blue-jean.png",
-    name: "Chino Pants",
-    cap: "Slim Fit",
-    price: "$44.99",
-  },
-];
-
-const formal: Products[] = [
-  {
-    image: "/charcoal-suit.png",
-    name: "Classic Charcoal Suit",
-    cap: "Slim Fit",
-    price: "$199.99",
-  },
-  {
-    image: "/black-shirt.png",
-    name: "Black French Cuff Shirt",
-    cap: "Regular Fit",
-    price: "$39.99",
-  },
-  {
-    image: "/leather-shoe.png",
-    name: "Black Leather Oxford Shoes",
-    cap: "Black",
-    price: "$89.99",
-  },
-  {
-    image: "/belt.png",
-    name: "Classic Black Leather Belt",
-    cap: "Genuine Leather",
-    price: "$29.99",
-  },
-];
-
-const lifestyle: Products[] = [
-  {
-    image: "/performance-jacket.png",
-    name: "Performance Jacket",
-    cap: "Athletic Fit",
-    price: "$59.99",
-  },
-  {
-    image: "/athletic-short.png",
-    name: "Quick-Dry Athletic Shorts",
-    cap: "Relaxed Fit",
-    price: "$39.99",
-  },
-  {
-    image: "/legging.png",
-    name: "High-Performance Leggings",
-    cap: "Compression Fit",
-    price: "$44.99",
-  },
-  {
-    image: "/running-shoe.png",
-    name: "Lightweight Running Shoes",
-    cap: "Black",
-    price: "$69.99",
-  },
-];
+import { casual, formal, lifestyle } from "../libs/data";
 
 const Products: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -281,7 +202,7 @@ const Products: React.FC = () => {
                     className="absolute left-[68%] top-[93%] rounded-full"
                     aria-label="View Cart"
                   >
-                    <Link to="/productsdetails">
+                    <Link to={`/product/${each.id}`}>
                       <button
                         className="p-3 rounded-full bg-white text-2xl hover:scale-105 duration-300 transition"
                         aria-label="Shopping Cart"

@@ -69,6 +69,121 @@ export const product: Products[] = [
   },
 ];
 
+export const casual = [
+  {
+    id: "c01",
+    image: "/crazy-blue-jean.png",
+    name: "Classic Denim Jeans",
+    cap: "Slim Fit",
+    price: "$49.99",
+    description:
+      "Timeless blue denim with a modern slim fit for everyday comfort and style.",
+  },
+  {
+    id: "c02",
+    image: "/green-hoodie.png",
+    name: "Cozy Comfort Hoodie",
+    cap: "Relaxed Fit",
+    price: "$39.99",
+    description: "A soft, warm hoodie ideal for casual wear and cozy nights.",
+  },
+  {
+    id: "c03",
+    image: "/red-shirt.png",
+    name: "Classic Polo Shirt",
+    cap: "Regular Fit",
+    price: "$29.99",
+    description:
+      "Smart casual polo shirt with breathable fabric and comfortable fit.",
+  },
+  {
+    id: "c04",
+    image: "/normal-blue-jean.png",
+    name: "Chino Pants",
+    cap: "Slim Fit",
+    price: "$44.99",
+    description:
+      "Stylish slim-fit chinos perfect for any casual day or night out.",
+  },
+];
+
+export const formal = [
+  {
+    id: "f01",
+    image: "/charcoal-suit.png",
+    name: "Classic Charcoal Suit",
+    cap: "Slim Fit",
+    price: "$199.99",
+    description:
+      "Sharp charcoal suit tailored for a sleek and professional appearance.",
+  },
+  {
+    id: "f02",
+    image: "/black-shirt.png",
+    name: "Black French Cuff Shirt",
+    cap: "Regular Fit",
+    price: "$39.99",
+    description:
+      "Elegant black shirt with French cuffs, great for formal occasions.",
+  },
+  {
+    id: "f03",
+    image: "/leather-shoe.png",
+    name: "Black Leather Oxford Shoes",
+    cap: "Black",
+    price: "$89.99",
+    description: "Polished leather oxfords that complete any formal ensemble.",
+  },
+  {
+    id: "f04",
+    image: "/belt.png",
+    name: "Classic Black Leather Belt",
+    cap: "Genuine Leather",
+    price: "$29.99",
+    description:
+      "A durable black leather belt with a clean, minimal buckle design.",
+  },
+];
+
+export const lifestyle = [
+  {
+    id: "l01",
+    image: "/performance-jacket.png",
+    name: "Performance Jacket",
+    cap: "Athletic Fit",
+    price: "$59.99",
+    description:
+      "Lightweight jacket for performance and comfort in active environments.",
+  },
+  {
+    id: "l02",
+    image: "/athletic-short.png",
+    name: "Quick-Dry Athletic Shorts",
+    cap: "Relaxed Fit",
+    price: "$39.99",
+    description:
+      "Breathable, quick-dry shorts perfect for workouts or lounging.",
+  },
+  {
+    id: "l03",
+    image: "/legging.png",
+    name: "High-Performance Leggings",
+    cap: "Compression Fit",
+    price: "$44.99",
+    description:
+      "Flexible compression leggings ideal for fitness or everyday wear.",
+  },
+  {
+    id: "l04",
+    image: "/running-shoe.png",
+    name: "Lightweight Running Shoes",
+    cap: "Black",
+    price: "$69.99",
+    description:
+      "Cushioned and lightweight running shoes designed for daily runs and casual wear.",
+  },
+];
+
 export const about: Abouts[] = [
   {
     img: "/star-icon.png",

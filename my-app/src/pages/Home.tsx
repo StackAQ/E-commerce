@@ -25,7 +25,7 @@ import {
   questionOne,
   questionTwo,
   questionThree,
-  experience
+  experience,
 } from "../libs/data";
 
 const Home: React.FC = () => {
