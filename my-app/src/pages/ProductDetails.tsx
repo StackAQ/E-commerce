@@ -109,7 +109,7 @@ const ProductDetails: React.FC = () => {
         </div>
 
         <div className="size-10">
-          <img src="logo.png" alt="Klothink Logo" className="h-10 w-auto" />
+          <img src="/logo.png" alt="Klothink Logo" className="h-10 w-auto" />
         </div>
 
         <div className="flex items-center gap-4">
@@ -168,189 +168,6 @@ const ProductDetails: React.FC = () => {
         )}
       </nav>
 
-      {/* <div className="flex flex-col lg:flex-row item-start gap-8 layout">
-        <motion.img
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          src="/dress-details-normal.png"
-          className="hidden lg:grid h-fit"
-          alt=""
-        />
-        <motion.img
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          src="/dress-details-mobile.png"
-          className="block lg:hidden"
-          alt=""
-        />
-        <div className="grid gap-4 w-full">
-          <div className="flex items-start flex-col lg:flex-row justify-between gap-4 w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="grid gap-2"
-            >
-              <div className="flex items-center gap-2">
-                <span className="description">Men's Casual Outerwear</span>
-                <span className="text-sm px-2 py-1 bg-yellow-400 rounded-3xl">
-                  12 Left!
-                </span>
-              </div>
-              <span className="subhead">Urban Explorer Denim Jacket</span>
-              <span className="font-semibold text-[#262626] text-2xl">
-                $69.99
-              </span>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="flex items-center lg:gap-4 justify-around w-full lg:w-fit"
-            >
-              <button className="flex items-center gap-2 px-4 py-2 rounded-3xl hover:text-black text-white hover:bg-white hover:border hover:border-[#F1F1F3] bg-black">
-                <FaShoppingBag /> Buy Now
-              </button>
-              <button className="flex items-center gap-2 px-4 py-2 rounded-3xl text-black hover:text-white hover:bg-black border border-[#F1F1F3]">
-                <FaShoppingBag /> Buy Now
-              </button>
-            </motion.div>
-          </div>
-          <div className="border border-[#F1F1F3] p-6 rounded-md grid gap-4 grid-cols-2 text-sm lg:text-base">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="grid gap-1"
-            >
-              <span className="text-[#262626] font-semibold">Material</span>
-              <span className="text-[#656567]">
-                High-Quality Denim (100% Cotton)
-              </span>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="grid gap-1"
-            >
-              <span className="font-semibold text-[#262626]">Fit</span>
-              <span className="text-[#656567]">Classic fit</span>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="grid gap-1"
-            >
-              <span className="text-[#262626] font-semibold">Color</span>
-              <div className="p-1 rounded-3xl flex items-center gap-1">
-                <div className="size-6 bg-black text-white p-2 grid place-content-center rounded-full">
-                  <FaCheck />
-                </div>
-                <div className="size-6 bg-[#DAA573] text-white p-2 grid place-content-center rounded-full"></div>
-                <div className="size-6 bg-[#DAD673] text-white p-2 grid place-content-center rounded-full"></div>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="grid gap-1"
-            >
-              <span className="font-semibold text-[#262626]">Sizes</span>
-              <div className="flex items-center gap-2 font-medium">
-                <div className="size-6 p-2 bg-[#F7F7F8] grid place-content-center">
-                  S
-                </div>
-                <div className="size-6 p-2 bg-[#262626] grid place-content-center text-white">
-                  M
-                </div>
-                <div className="size-6 p-2 bg-[#F7F7F8] grid place-content-center">
-                  L
-                </div>
-                <div className="size-6 p-2 bg-[#F7F7F8] grid place-content-center">
-                  XL
-                </div>
-                <div className="size-6 p-2 bg-[#F7F7F8] grid place-content-center">
-                  XXL
-                </div>
-              </div>
-            </motion.div>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="p-6 border border-[#F1F1F3] rounded-md grid gap-4"
-          >
-            <span className="subhead">Shipping Information</span>
-            <ul className="pl-6 list-disc">
-              <li className="text-[#656567]">
-                Standard shipping: <b>3-5 business days</b>
-              </li>
-              <li className="text-[#656567]">
-                Express shipping options available at checkout
-              </li>
-            </ul>
-          </motion.div>
-          <div className="p-6 border border-[#F1F1F3] rounded-md grid gap-4">
-            <motion.span
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="subhead"
-            >
-              Features
-            </motion.span>
-            <ul className="pl-6 list-disc">
-              <motion.li
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className="text-[#656567]"
-              >
-                Distressed detailing for a rugged look
-              </motion.li>
-              <motion.li
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className="text-[#656567]"
-              >
-                Button-up front closure with engraved metal buttons
-              </motion.li>
-              <motion.li
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className="text-[#656567]"
-              >
-                Two side pockets for added functionality
-              </motion.li>
-              <motion.li
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className="text-[#656567]"
-              >
-                Adjustable buttoned cuffs for a personalized fit
-              </motion.li>
-              <motion.li
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className="text-[#656567]"
-              >
-                Back waist tabs for customizable styling
-              </motion.li>
-            </ul>
-          </div>
-        </div>
-      </div> */}
       <motion.div
         className="max-w-6xl mx-auto px-4 py-10"
         initial={{ opacity: 0, y: 30 }}
@@ -436,10 +253,10 @@ const ProductDetails: React.FC = () => {
                     <img src={each.img} className="size-12 bg-" alt="" />
                     <div className="grid gap-1">
                       <span className="font-semibold">{each.head}</span>
-                      <img src="five-star-icon.png" alt="" />
+                      <img src="/five-star-icon.png" alt="" />
                     </div>
                   </div>
-                  <img src="asteric-icon.png" className="size-10" alt="" />
+                  <img src="/asteric-icon.png" className="size-10" alt="" />
                 </div>
                 <span className="">{each.cap}</span>
               </motion.div>
