@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../index.css";
 import { Link } from "react-router-dom";
 import {
@@ -67,7 +67,7 @@ const questionThree: Questions[] = [
 ];
 
 import { useParams } from "react-router-dom";
-import { product } from "../libs/data";
+import { allProducts } from "../libs/data";
 import Products from "./Products";
 
 const ProductDetails: React.FC = () => {
@@ -76,7 +76,12 @@ const ProductDetails: React.FC = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const { id } = useParams<{ id: string }>();
-  const productdetail = product.find((p) => p.id === id);
+  const productdetail = allProducts.find((p) => p.id === id);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
 
   if (!productdetail) {
     return (

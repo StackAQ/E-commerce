@@ -277,3 +277,5 @@ export const experience: Experience[] = [
     cap: "Receive your carefully packaged Klothink order.",
   },
 ];
+
+export const allProducts = [...product, ...casual, ...formal, ...lifestyle];
