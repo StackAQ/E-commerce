@@ -159,7 +159,7 @@ const ProductDetails: React.FC = () => {
         )}
       </nav>
 
-      <div className="flex flex-col lg:flex-row item-start gap-8 layout">
+      {/* <div className="flex flex-col lg:flex-row item-start gap-8 layout">
         <motion.img
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -341,6 +341,9 @@ const ProductDetails: React.FC = () => {
             </ul>
           </div>
         </div>
+      </div> */}
+      <div className="flex flex-col lg:flex-row items-start gap-8 layout">
+        
       </div>
 
       <div className="layout grid gap-6">
