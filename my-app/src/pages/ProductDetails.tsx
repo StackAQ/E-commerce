@@ -235,7 +235,7 @@ const ProductDetails: React.FC = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="size-8 p-2 rounded-full bg-white text-black grid place-content-center"
+            className="hidden lg:block size-8 p-2 rounded-full bg-white text-black grid place-content-center"
           >
             <FaLessThan />
           </motion.button>
@@ -266,7 +266,7 @@ const ProductDetails: React.FC = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="size-8 rounded-full bg-black text-white p-2 grid place-content-center"
+            className="hidden lg:block size-8 rounded-full bg-black text-white p-2 grid place-content-center"
           >
             <FaGreaterThan />
           </motion.button>
