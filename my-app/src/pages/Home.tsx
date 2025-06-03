@@ -304,7 +304,7 @@ const Home: React.FC = () => {
                   className="absolute left-[85%] top-[93%] rounded-full"
                   aria-label="View Cart"
                 >
-                  <Link to={`/product\${product.id}`} key={product.id}>
+                  <Link to={`/product/${product.id}`} key={product.id}>
                     <button
                       className="p-3 rounded-full bg-yellow-400 text-xl hover:bg-yellow-500 transition"
                       aria-label="Shopping Cart"

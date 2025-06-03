@@ -8,6 +8,7 @@ interface Products {
   image: string;
   name: string;
   price: string;
+  description?: string;
 }
 
 interface Abouts {
@@ -39,24 +40,32 @@ export const product: Products[] = [
     image: "/crazy-blue-jean.png",
     name: "Classic Denim Jeans",
     price: "$49.99",
+    description:
+      "Timeless blue denim jeans with a modern fit—perfect for everyday wear.",
   },
   {
     id: "02",
     image: "/green-hoodie.png",
     name: "Cozy Comfort Hoodie",
     price: "$39.99",
+    description:
+      "Stay warm and stylish with this ultra-soft green hoodie, designed for comfort and layering.",
   },
   {
     id: "03",
     image: "/red-shirt.png",
     name: "Classic Polo Shirt",
     price: "$29.99",
+    description:
+      "A versatile red polo shirt crafted from breathable cotton for a clean, casual look.",
   },
   {
     id: "04",
     image: "/normal-blue-jean.png",
     name: "Chino Pants",
     price: "$44.99",
+    description:
+      "Smart and sleek, these chino pants offer a perfect blend of comfort and style for any occasion.",
   },
 ];
 

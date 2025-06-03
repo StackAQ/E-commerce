@@ -16,7 +16,7 @@ import {
   FaCheck,
 } from "react-icons/fa";
 
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 
 interface Questions {
   text: string;
@@ -75,11 +75,15 @@ const ProductDetails: React.FC = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const { id } = useParams<{ id: string }>()
-  const productdetail = product.find((p) => p.id === id)
+  const { id } = useParams<{ id: string }>();
+  const productdetail = product.find((p) => p.id === id);
 
   if (!productdetail) {
-    return <div className="text-3xl font-bold">Product not found</div>
+    return (
+      <div className="text-3xl font-bold text-center mt-10">
+        Product not found
+      </div>
+    );
   }
 
   return (
@@ -342,9 +346,44 @@ const ProductDetails: React.FC = () => {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-col lg:flex-row items-start gap-8 layout">
-        
-      </div>
+      <motion.div
+        className="max-w-6xl mx-auto px-4 py-10"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="flex flex-col lg:flex-row gap-10 items-start">
+          {/* Product Image */}
+          <motion.img
+            src={productdetail.image}
+            alt={productdetail.name}
+            className="w-full max-w-md h-auto object-cover rounded-xl shadow-md"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          />
+
+          {/* Product Info */}
+          <motion.div
+            className="flex flex-col gap-4"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <h1 className="text-3xl font-bold">{productdetail.name}</h1>
+            <span className="text-2xl font-semibold text-[#262626]">
+              {productdetail.price}
+            </span>
+            <p className="text-base text-[#656567]">
+              {productdetail.description}
+            </p>
+
+            <button className="mt-4 bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition">
+              Add to Cart
+            </button>
+          </motion.div>
+        </div>
+      </motion.div>
 
       <div className="layout grid gap-6">
         <div className="grid gap-4">
